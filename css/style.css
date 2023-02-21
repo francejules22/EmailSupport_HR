@@ -1,0 +1,56 @@
+.navbar
+{
+    background:#002E52;
+}
+.logo
+{
+    height:80px;
+   margin-left: 40px;
+}
+.table-responsive
+{
+    margin-top:20px;
+}
+
+.wrapper-box{
+    display: flex;
+    justify-content: flex-end;
+}
+.icon
+{
+    margin-right: 10px;
+}
+.ae
+{
+    margin-right: 10px;
+}
+
+
+
+.button-box{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.row
+{
+    margin-top: 20px;
+}
+
+.bulk
+{
+    justify-content: end;
+    margin-left: 720px;
+    width: 140px;
+}
+.form
+{
+    height: 720px;
+    margin-top: 50px;
+}
+.title
+{
+    font-size: 30px;
+}

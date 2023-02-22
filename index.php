@@ -14,6 +14,12 @@ session_start();
    //fetchAll() -Returns an array containing all of the result set rows
    $result = $statement->fetchALL();
 ?>
+
+<?php
+   include_once('edit_customer.php');
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,7 +72,6 @@ session_start();
     ?>
     
     
-
 <!-- Start of Navbar -->
   <nav class="navbar navbar-expand-md"  >
     <div class="container-fluid ">
@@ -89,7 +94,8 @@ session_start();
   </nav>
 <!-- End of Navbar -->
 
-<!-- Start of Modal -->
+
+<!-- Start of Modal Add Customer -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
    <div class="modal-dialog">
      <div class="modal-content">
@@ -115,7 +121,39 @@ session_start();
       </div>
    </div>
 </div>
+<!--End of Modal Add Customer-->
 
+
+<!--Start Modal of Edit Customer-->
+<div class="modal fade" id="updateUserForm" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+       <form method="POST" action="editUserForm">
+         <div class="modal-body">
+           <div class="row">
+              <div class="col-sm-12">
+                  <div class="form-group">
+                     <label>Name</label>
+                     <input id="edit_customer_name" class="form-control" type="text" name="edit_customer_name" value="<?= $name ?>">
+                  </div>
+              </div>
+              <div class="col-sm-12">
+                  <div class="form-group">
+                     <label>Email</label>
+                     <input id="edit_customer_email" class="form-control" type="email" name="edit_customer_email" value="<?= $email ?>">
+                  </div>
+              </div>
+           </div>
+        </div>
+        <div class="modal-footer">
+           <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+           <button type="submit" class="btn btn-success">Update</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!--End of Modal  Edit Customer-->
 
 <main class=" mt-5 pt-3">
     <div class="wrapper-box container">
@@ -151,8 +189,8 @@ session_start();
                      <button type="button" name="email_button" class="btn btn-info btn-xs email_button" ><i class="icon fa-solid fa-square-poll-horizontal"></i>Status</button> 
                   </td>
                   <td><center>
-                  <a href="edit_customer.php?id=<?php echo $row["customer_id"];?>" type="button" class="btn btn-warning"><i class="icon fa-solid fa-pen-to-square"></i></a>
-                    <button type="button" class="del_user btn btn-danger" id= "<?= $row['customer_id']; ?>" ><i class="icon fa-solid fa-trash"></i></button>
+                    <button type="button" class="btn btn-warning"  data-bs-toggle="modal" data-bs-target="#updateUserForm" id= "<?= $row['customer_id']; ?>" ><i class="fa-solid fa-pen-to-square"></i></button>
+                    <button type="button" class="del_user btn btn-danger" id= "<?= $row['customer_id']; ?>" ><i class="fa-solid fa-trash"></i></button>
                    </center></td>
                 </tr>
                 <?php

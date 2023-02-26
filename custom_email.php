@@ -11,7 +11,6 @@
    $result = $statement->fetchALL();
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,6 +28,8 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- ckeditor -->
+    <script src="https://cdn.ckeditor.com/4.20.0/full/ckeditor.js"></script>
 </head> 
 
 <body>
@@ -38,7 +39,7 @@
               <button class="toggle navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
               </button>
-     
+
            <div class="collapse navbar-collapse" id="navbarSupportedContent">
              <form class="ms-auto" role="search" >
                <div class="input-group ">
@@ -178,14 +179,10 @@
     </div>
 </main>
 
-
-
-   <!-- Bootstrap JS-->
+<!-- Bootstrap JS-->
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>    
 </html>
-
-
 
 
 <!-- START SINGLE EMAIL-->
@@ -242,6 +239,11 @@
                 }
             })
         }); 
+    });
+   
+    //Adding CKEDITOR
+    CKEDITOR.replace( 'body',{
+        removeButtons: 'Anchor,Source,Preview,Templates,Cut,Copy,Paste,PasteText,PasteCode,PasteFromWord,Undo,Redo,Scayt,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,HiddenField,Image,Table,HorizontalRule,Smiley,SpecialChar,PageBreak,Iframe,Strike,CopyFormatting,RemoveFormat,BulletedList,NumberedList,Outdent,Indent,CreateDiv,Blockquote,JustifyLeft,JustifyCenter,JustifyRight,JustifyBlock,BidiLtr,BidiRtl,Link,Unlink,Styles,Format,Font,FontSize,spacingsliders,TextColor,BGColor,ShowBlocks,Maximize,About',
     });
 </script>
 <!-- END SINGLE EMAIL-->

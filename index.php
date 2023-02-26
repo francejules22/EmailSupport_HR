@@ -1,22 +1,6 @@
-<?php
-session_start();
-   //Connection using PDO
-   //PDO (PHP Data Objects) - provides data access abstraction layer, which means that, regardless of which database you're using you use the same functions to issue queries and fetch data.
-   $connect = new PDO("mysql:host=localhost; dbname=email_db", "root", "");
-   $query = "SELECT * FROM customer ORDER BY customer_id";
 
-   //prepare() - used to prepare an SQL statement for execution.
-   $statement = $connect->prepare($query);
-
-   //execute() - Returns TRUE on success or FALSE on failure.
-   $statement->execute();
-
-   //fetchAll() -Returns an array containing all of the result set rows
-   $result = $statement->fetchALL();
-?>
-
-<?php
-   include_once('edit_customer.php');
+<?php 
+   include 'dbconnect/pdo_connection.php';
 ?>
 
 
@@ -47,7 +31,7 @@ session_start();
            $name=$_POST['ename'];
            $email=$_POST['email'];
     
-           $loop=0;
+          $loop=0;
           $count=0;
           $res=mysqli_query($link,"SELECT *FROM customer WHERE customer_name='$name' ") or die(mysqli_error($link));
           $count=mysqli_num_rows($res);
@@ -107,7 +91,7 @@ session_start();
             <form  method="POST">
                <div class="input-group flex-nowrap mb-3">
                   <span class="input-group-text" id="addon-wrapping">Name:</span>
-                  <input type="text" class="form-control" placeholder="" name="ename"aria-label="Username" aria-describedby="addon-wrapping">
+                  <input type="text" class="form-control" placeholder="" name="ename" aria-label="Username" aria-describedby="addon-wrapping">
                </div>
                <div class="input-group flex-nowrap">
                  <span class="input-group-text" id="addon-wrapping">Email:</span>
@@ -124,36 +108,6 @@ session_start();
 <!--End of Modal Add Customer-->
 
 
-<!--Start Modal of Edit Customer-->
-<div class="modal fade" id="updateUserForm" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-       <form method="POST" action="editUserForm">
-         <div class="modal-body">
-           <div class="row">
-              <div class="col-sm-12">
-                  <div class="form-group">
-                     <label>Name</label>
-                     <input id="edit_customer_name" class="form-control" type="text" name="edit_customer_name" value="<?= $name ?>">
-                  </div>
-              </div>
-              <div class="col-sm-12">
-                  <div class="form-group">
-                     <label>Email</label>
-                     <input id="edit_customer_email" class="form-control" type="email" name="edit_customer_email" value="<?= $email ?>">
-                  </div>
-              </div>
-           </div>
-        </div>
-        <div class="modal-footer">
-           <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-           <button type="submit" class="btn btn-success">Update</button>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-<!--End of Modal  Edit Customer-->
 
 <main class=" mt-5 pt-3">
     <div class="wrapper-box container">
@@ -189,8 +143,8 @@ session_start();
                      <button type="button" name="email_button" class="btn btn-info btn-xs email_button" ><i class="icon fa-solid fa-square-poll-horizontal"></i>Status</button> 
                   </td>
                   <td><center>
-                    <button type="button" class="btn btn-warning"  data-bs-toggle="modal" data-bs-target="#updateUserForm" id= "<?= $row['customer_id']; ?>" ><i class="fa-solid fa-pen-to-square"></i></button>
-                    <button type="button" class="del_user btn btn-danger" id= "<?= $row['customer_id']; ?>" ><i class="fa-solid fa-trash"></i></button>
+                    <button type="button" class="btn btn-warning update_user" id= "<?= $row['customer_id'] ?>" ><i class="fa-solid fa-pen-to-square"></i></button>
+                    <button type="button" class="btn btn-danger del_user " id= "<?= $row['customer_id'] ?>" ><i class="fa-solid fa-trash"></i></button>
                    </center></td>
                 </tr>
                 <?php
@@ -203,11 +157,13 @@ session_start();
     </div>
  </main>
 
-</body>
-</html>
+  <div id="display_user"></div>
 
 <script>
+  //Start
     $(document).ready(function(){
+
+      //Start PHPMailer
         $('.email_button').click(function(){
             $(this).attr('disabled', 'disabled');
             var id = $(this).attr("id");
@@ -232,8 +188,9 @@ session_start();
                    }
                });
             }
+         //End PHPMailer
 
-            //Starting AJAX
+         //Start AJAX
             $.ajax({
                 url: "send_mail.php",
                 method: "POST",
@@ -257,9 +214,32 @@ session_start();
                     $('#'+id).attr('disabled', false);
                 }
             })
-        });
-        
-        // delete function
+        })
+       //End AJAX
+
+
+        //Edit Function
+        $(document).on('click','.update_user',function(){
+           var id = $(this).attr('id');
+          
+           $("#display_user").html('');
+           $.ajax({
+            url: 'CRUD/view_customer.php',
+            type: 'POST',
+            cache: false,
+            data: {id:id},
+            success:function(data){
+               $("#display_user").html(data);
+               $("#updateUserModal").modal('show');
+            }
+           })
+        })
+
+
+
+
+
+        //Start Delete Function
         $(document).on('click','.del_user',function(e){
             var id = $(this).attr('id');
             Swal.fire({
@@ -280,7 +260,7 @@ session_start();
                         Swal.fire({
                             position: 'center',
                             icon: 'success',
-                            title: 'Customer has been deleted',
+                            title: 'Deleted Successfully',
                             showConfirmButton: false,
                             timer: 2000
                         }).then(()=>{
@@ -291,5 +271,11 @@ session_start();
                }
             })
         })
-    });
+      //End Delete Function
+
+}); 
+//End
 </script>
+
+</body>
+</html>

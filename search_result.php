@@ -2,8 +2,13 @@
 <?php 
    include 'dbconnect/pdo_connection.php';
 
+   //Search Function
+   $mysqli= new mysqli('localhost','root','','email_db');
+   $search = $_GET['search'];
+   $sql = "SELECT * FROM customer WHERE customer_name LIKE '$search%' ORDER BY customer_id DESC";
+   $query = $mysqli->query($sql) or die($mysqli->error);
+   $row = $query->fetch_assoc();
 ?>
-
 
 
 <!DOCTYPE html>
@@ -80,7 +85,6 @@
       </div>
   </nav>
 <!-- End of Navbar -->
-
 
 
 <!-- Start of Modal Add Customer -->
@@ -194,6 +198,7 @@
                });
             }
          //End PHPMailer
+
 
          //Start AJAX
             $.ajax({

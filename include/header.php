@@ -21,8 +21,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- sweetalert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.all.min.js"></script>
+  <!--Datatables-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.3/css/jquery.dataTables.min.css">
   </head> 
 <body>
+
+<!--Start Add Function -->
     <?php
         $link=mysqli_connect("localhost","root","");
         mysqli_select_db($link,"email_db");
@@ -54,7 +58,7 @@
         }
       }
     ?>
-    
+<!--End Add Function -->
     
 <!-- Start of Navbar -->
   <nav class="navbar navbar-expand-md"  >
@@ -68,13 +72,15 @@
              <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
               <!-- Start Search Form-->
-               <form class="ms-auto" action="search_result.php" method="GET">
+               <form class="ms-auto" action="" method="POST">
                  <div class="input-group ">
                    <button class="btn btn-outline-light" type="submit" id="button-addon1"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
-                   <input type="text" id="search" name="search" class="form-control" aria-label="Example text with button addon" aria-describedby="button-addon1" autocomplete="off">
+                   <input type="text" id="search" name="search" class="form-control" value="<?php if(isset($_GET['search_id'])) {echo $_GET['search_id'];} ?>" aria-label="Example text with button addon" aria-describedby="button-addon1" autocomplete="off">
                  </div>
                </form>
              <!-- End Search Form-->
+
+
 
              <!--Start Dropdown-->
                 <div class="dropdown">

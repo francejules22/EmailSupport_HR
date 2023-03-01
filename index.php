@@ -71,36 +71,38 @@
 
     <div class="container">
          <div class="table-responsive text-center">
-          <!--Start of Table-->
-             <table class="table table-bordered table-striped">
-                <tr>
-                    <th>Customer Name</th>
-                    <th>Email</th>
-                    <th>Email Status</th>
-                    <th colspan="2">Action</th>
-                </tr>
-                <?php
-                    $sql = "SELECT * FROM customer";
-                    $query = $link->query($sql) or die($link->error);
-                   while($row = $query->fetch_assoc())
-                  {
-                ?>
-                <tr>
-                   <td> <?= $row['customer_name']?></td>
-                   <td> <?= $row['customer_email']?></td>
-                   <td>
-                     <button type="button" name="email_button" class="btn btn-info btn-xs email_button" ><i class="icon fa-solid fa-square-poll-horizontal"></i>Status</button> 
-                  </td>
-                  <td><center>
-                    <button type="button" class="btn btn-warning update_user" id= "<?= $row['customer_id'] ?>" ><i class="fa-solid fa-pen-to-square"></i></button>
-                    <button type="button" class="btn btn-danger del_user " id= "<?= $row['customer_id'] ?>" ><i class="fa-solid fa-trash"></i></button>
-                    <button type="button" class="btn btn-danger archive_user" id= "<?= $row['customer_id'] ?>" ><i class="fa solid fa-box-archive"></i></button>
-                   </center></td>
-                </tr>
-                <?php
-                   }
-                ?>  
-             </table>
+             <!--Start of Table-->
+             <table class="table table-bordered table-striped mb-5" id="data">
+                <thead>
+                   <tr>
+                      <th>Customer Name</th>
+                      <th>Email</th>
+                      <th>Email Status</th>
+                      <th>Action</th>
+                   </tr>
+                   <?php
+                         $sql = "SELECT * FROM customer";
+                         $query = $link->query($sql) or die($link->error);
+                         while($row = $query->fetch_assoc())
+                        {
+                   ?>
+                </thead>
+                <tbody>
+                   <tr>
+                      <td><?= $row['customer_name']?></td>
+                      <td><?= $row['customer_email']?></td>
+                      <td><button type="button" name="email_button" class="btn btn-info btn-xs email_button" ><i class="icon fa-solid fa-square-poll-horizontal"></i>Status</button> </td>
+                      <td><center>
+                         <button type="button" class="btn btn-warning update_user" id= "<?= $row['customer_id'] ?>" ><i class="fa-solid fa-pen-to-square"></i></button>
+                         <button type="button" class="btn btn-danger del_user " id= "<?= $row['customer_id'] ?>" ><i class="fa-solid fa-trash"></i></button>
+                         <button type="button" class="btn btn-danger archive_user" id= "<?= $row['customer_id'] ?>" ><i class="fa solid fa-box-archive"></i></button>
+                      </center></td>
+                  </tr>
+                  <?php
+                        }
+                  ?>
+              </tbody>
+            </table>
             <!--End of Table-->
           </div>
        </div>
@@ -110,9 +112,18 @@
   <div id="display_user"></div>
   <div id="search_result"></div>
 
+<!--Datatables-->
+<script src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
+
+
 <script>
   //Start
     $(document).ready(function(){
+
+      //Data tables
+      $('#data').DataTable();
+
 
       //Start PHPMailer
         $('.email_button').click(function(){

@@ -1,86 +1,19 @@
-
-<?php 
-   include 'dbconnect/pdo_connection.php';
-
+<?php
+     include 'include/header.php';
 ?>
 
 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HR Email Support</title>
-   <!-- bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>    
-   <!-- jquery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <!-- link css -->
-    <link rel="stylesheet" href="CSS/style.css">
-  <!-- fontawesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- sweetalert -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.all.min.js"></script>
-  </head> 
-<body>
-    <?php
-        $link=mysqli_connect("localhost","root","");
-        mysqli_select_db($link,"email_db");
-    
-       if(isset($_POST["add"])){
-           $name=$_POST['ename'];
-           $email=$_POST['email'];
-    
-          $loop=0;
-          $count=0;
-          $res=mysqli_query($link,"SELECT *FROM customer WHERE customer_name='$name' ") or die(mysqli_error($link));
-          $count=mysqli_num_rows($res);
-          
-          if ($count==1){
-    ?>
-         <script>
-             Swal.fire({
-              position: 'center',
-              icon: 'warning',
-              title: 'Employee already registered',
-              showConfirmButton: false,
-              timer: 1500
-            })
-         </script>
-    <?php
-      } else {
-          $loop=$loop+1;
-          mysqli_query($link,"INSERT INTO customer(customer_name,customer_email)VALUES('$name','$email')") or die(mysqli_error($link));
-        }
-      }
-    ?>
-    
-    
-<!-- Start of Navbar -->
-  <nav class="navbar navbar-expand-md"  >
-    <div class="container-fluid ">
-      <img src="img/GECO.png" class="logo" >
-         <div class=" container fw-bold text-light text-center" style="font-size:30px;"> HR Email Support</div> 
-           <!-- style="margin-left:700px; font-size:30px; -->
-              <button class="toggle navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                 <span class="navbar-toggler-icon"></span>
-               </button>
-             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <!-- Start Search Form-->
-               <form class="ms-auto" action="search_result.php" method="GET">
-                 <div class="input-group ">
-                   <button class="btn btn-outline-light" type="submit" id="button-addon1"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
-                   <input type="text" id="search" name="search" class="form-control" aria-label="Example text with button addon" aria-describedby="button-addon1" autocomplete="off">
-                 </div>
-               </form>
-             <!-- End Search Form-->
-            </div>
-      </div>
-  </nav>
-<!-- End of Navbar -->
-
+<div class="wrapper-box container">
+       <!-- Button trigger modal -->
+        <button type="button" class="ae btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+           <i class="icon fa-solid fa-user-plus"></i>Add Customer
+        </button>
+        <button class="ae btn btn-outline-dark"> <i class="icon fa-solid fa-clock-rotate-left"></i>History</button>
+        
+        <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#archive">
+           <i class="icon fa-solid fa-box-archive"></i>Archive All Accounts
+        </button>
+</div>
 
 
 <!-- Start of Modal Add Customer -->
@@ -112,17 +45,29 @@
 <!--End of Modal Add Customer-->
 
 
+<!-- Start of Archive Modal-->
+   <div class="modal fade" id="archive" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+       <div class="modal-dialog">
+          <div class="modal-content">
+             <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Warning!</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+             </div>
+             <div class="modal-body">
+                <form action="handler/bulk_archive.php" method="POST">
+                   <h3>Are you sure you want to save all data to the archive!</h3>
+              </div>
+              <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger" name="archive"><i class="icon fa-solid fa-box-archive"></i>Confirm</button>
+                 </form>
+              </div>
+          </div>
+       </div>
+   </div>
+<!-- End of Archive Modal-->
 
-<main class=" mt-5 pt-3">
-    <div class="wrapper-box container">
-       <!-- Button trigger modal -->
-        <button type="button" class="ae btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-           <i class="icon fa-solid fa-user-plus"></i>Add Customer
-        </button>
-        <a href="custom_email.php" class="ae btn btn-outline-primary"><i class="icon fa-solid fa-envelope"></i>Custom Email</a>
-        <button class="ae btn btn-outline-dark"> <i class="icon fa-solid fa-clock-rotate-left"></i>History</button>
-        <button class="btn btn-outline-warning"><i class="icon fa-solid fa-box-archive"></i>Archive</button>
-    </div>
+
+
 
     <div class="container">
          <div class="table-responsive text-center">
@@ -149,6 +94,7 @@
                   <td><center>
                     <button type="button" class="btn btn-warning update_user" id= "<?= $row['customer_id'] ?>" ><i class="fa-solid fa-pen-to-square"></i></button>
                     <button type="button" class="btn btn-danger del_user " id= "<?= $row['customer_id'] ?>" ><i class="fa-solid fa-trash"></i></button>
+                    <button type="button" class="btn btn-danger archive_user" id= "<?= $row['customer_id'] ?>" ><i class="fa solid fa-box-archive"></i></button>
                    </center></td>
                 </tr>
                 <?php
@@ -278,6 +224,41 @@
       //End Delete Function
 
 
+      //Start Archive Function
+         $(document).on('click', '.archive_user', function(e){
+             var id = $(this).attr('id');
+             Swal.fire({
+                title: 'Are you sure?',
+                text: 'The details will be saved to archive!',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d44',
+                confirmButtonText: 'Confirm',
+             }).then((result) => {
+               if(result.isConfirmed){
+                  $.ajax({
+                     url: 'handler/single_archive.php',
+                     type: 'POST',
+                     data: {id:id},
+                     success:function(data){
+                        Swal.fire({
+                           position: 'center',
+                           icon: 'success',
+                           title: 'Data saved to archive successfully',
+                           showConfirmButton: false,
+                           timer: 2000
+                        }).then(() => {
+                           window.location.reload();
+                        })
+                     }
+                  })
+               }
+             })
+         });
+      //End Archive Function
+
+
       //Start Live Search Function
       //  $("#live_search").keyup(function(){
       //      var input = $(this).val();
@@ -302,5 +283,7 @@
 //End
 </script>
 
-</body>
-</html>
+
+<?php
+   include 'include/footer.php';
+?>

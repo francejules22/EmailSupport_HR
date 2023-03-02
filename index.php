@@ -8,11 +8,20 @@
         <button type="button" class="ae btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
            <i class="icon fa-solid fa-user-plus"></i>Add Customer
         </button>
-        <button class="ae btn btn-outline-dark"> <i class="icon fa-solid fa-clock-rotate-left"></i>History</button>
-        
-        <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#archive">
-           <i class="icon fa-solid fa-box-archive"></i>Archive All Accounts
+        <button type="button" class="ae btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <a class="dropdown-item" href="custom_email.php"><i class="icon fa-solid fa-envelope"></i>Send Custom Email</a>
         </button>
+        
+        <button type="button" class="ae btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#archive">
+           <i class="icon fa-solid fa-box-archive"></i>Bulk Archive
+        </button>
+
+        <button type="button" class="ae btn btn-outline-danger" data-bs-toggle="modal">
+           <a class="dropdown-item" href="archive_page.php"><i class="icon fa-solid fa-box-archive"></i>Archive</a>
+        </button>
+
+        <button class="ae btn btn-outline-dark"> <i class="icon fa-solid fa-clock-rotate-left"></i>History</button>
+       
 </div>
 
 
@@ -67,43 +76,43 @@
 <!-- End of Archive Modal-->
 
 
-
-
     <div class="container">
-         <div class="table-responsive text-center">
+         <div class="row justify-content-center">
              <!--Start of Table-->
-             <table class="table table-bordered table-striped mb-5" id="data">
-                <thead>
-                   <tr>
-                      <th>Customer Name</th>
-                      <th>Email</th>
-                      <th>Email Status</th>
-                      <th>Action</th>
-                   </tr>
-                   <?php
-                         $sql = "SELECT * FROM customer";
-                         $query = $link->query($sql) or die($link->error);
-                         while($row = $query->fetch_assoc())
-                        {
-                   ?>
-                </thead>
-                <tbody>
-                   <tr>
-                      <td><?= $row['customer_name']?></td>
-                      <td><?= $row['customer_email']?></td>
-                      <td><button type="button" name="email_button" class="btn btn-info btn-xs email_button" ><i class="icon fa-solid fa-square-poll-horizontal"></i>Status</button> </td>
-                      <td><center>
-                         <button type="button" class="btn btn-warning update_user" id= "<?= $row['customer_id'] ?>" ><i class="fa-solid fa-pen-to-square"></i></button>
-                         <button type="button" class="btn btn-danger del_user " id= "<?= $row['customer_id'] ?>" ><i class="fa-solid fa-trash"></i></button>
-                         <button type="button" class="btn btn-danger archive_user" id= "<?= $row['customer_id'] ?>" ><i class="fa solid fa-box-archive"></i></button>
-                      </center></td>
-                  </tr>
-                  <?php
-                        }
-                  ?>
-              </tbody>
-            </table>
+                 <table class="table table-bordered table-striped table-hovered" id="data">
+                    <thead>
+                       <tr>
+                          <th>Customer Name</th>
+                          <th>Email</th>
+                          <th>Email Status</th>
+                          <th>Actions</th>
+                       </tr>
+                    </thead>
+                    <tbody>
+                       <?php
+                            $conn = new mysqli('localhost','root','','email_db');
+                            $sql = "SELECT * FROM customer";
+                            $res = $conn->query($sql) or die($conn->error);
+                            while($row=$res->fetch_assoc())
+                           {
+                       ?>
+                       <tr>
+                          <td><?= $row['customer_name'] ?></td>
+                          <td><?= $row['customer_email'] ?></td>
+                          <td><button type="button" name="email_button" class="btn btn-info btn-xs email_button" ><i class="icon fa-solid fa-square-poll-horizontal"></i>Status</button> </td>
+                          <td><center>
+                             <button type="button" class="btn btn-warning update_user" id= "<?= $row['customer_id'] ?>" ><i class="fa-solid fa-pen-to-square"></i></button>
+                             <button type="button" class="btn btn-danger del_user " id= "<?= $row['customer_id'] ?>" ><i class="fa-solid fa-trash"></i></button>
+                             <button type="button" class="btn btn-success archive_user" id= "<?= $row['customer_id'] ?>" ><i class="fa solid fa-box-archive"></i></button>
+                          </center></td>
+                       </tr>
+                       <?php
+                           }
+                       ?>
+                    </tbody>
+                 </table>
             <!--End of Table-->
+            </div>
           </div>
        </div>
     </div>
@@ -111,11 +120,6 @@
 
   <div id="display_user"></div>
   <div id="search_result"></div>
-
-<!--Datatables-->
-<script src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
-
 
 <script>
   //Start

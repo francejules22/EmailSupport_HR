@@ -20,7 +20,7 @@
                     $query = $link->query($sql) or die($link->error);
                     while($row = $query->fetch_assoc())
                     {
-                ?>
+                  ?>
                 <tr>
                      <td><?= $row['customer_name'] ?></td>
                      <td><?= $row['customer_email'] ?></td>

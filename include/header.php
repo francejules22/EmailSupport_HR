@@ -1,6 +1,5 @@
-
 <?php 
-   include 'dbconnect/pdo_connection.php';
+   include 'dbconnect/connection.php';
 
 ?>
 
@@ -22,7 +21,12 @@
   <!-- sweetalert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.all.min.js"></script>
   <!--Datatables-->
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.3/css/jquery.dataTables.min.css">
+  <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css"/>
+  <link type="text/css" href="https://cdn.datatables.net/1.13.3/css/dataTables.bootstrap5.min.css"/>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.13.3/js/dataTables.bootstrap5.min.js"></script>
   </head> 
 <body>
 
@@ -63,7 +67,7 @@
 <!-- Start of Navbar -->
   <nav class="navbar navbar-expand-md"  >
     <div class="container-fluid ">
-      <img src="img/GECO.png" class="logo" >
+      <a href="index.php"><img src="img/GECO.png" class="logo" ></a>
          <div class=" container fw-bold text-light text-center" style="font-size:30px;"> HR Email Support</div> 
            <!-- style="margin-left:700px; font-size:30px; -->
               <button class="toggle navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -72,18 +76,18 @@
              <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
               <!-- Start Search Form-->
-               <form class="ms-auto" action="" method="POST">
+               <!-- <form class="ms-auto" action="" method="POST">
                  <div class="input-group ">
                    <button class="btn btn-outline-light" type="submit" id="button-addon1"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
-                   <input type="text" id="search" name="search" class="form-control" value="<?php if(isset($_GET['search_id'])) {echo $_GET['search_id'];} ?>" aria-label="Example text with button addon" aria-describedby="button-addon1" autocomplete="off">
+                   <input type="text" id="search" name="search" class="form-control" value=">" aria-label="Example text with button addon" aria-describedby="button-addon1" autocomplete="off">
                  </div>
-               </form>
+               </form> -->
              <!-- End Search Form-->
 
 
 
              <!--Start Dropdown-->
-                <div class="dropdown">
+                <!-- <div class="dropdown">
                     <button class="btn btn-outline-info dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="margin-left: 20px;">
                         <i class="fa-solid fa-bars"></i>
                    </button>
@@ -91,7 +95,7 @@
                       <li><a class="dropdown-item" href="archive_page.php"><i class="icon fa-solid fa-box-archive"></i>Archive</a></li>
                       <li><a class="dropdown-item" href="custom_email.php" ><i class="icon fa-solid fa-envelope"></i>Send Custom Email</a></li>
                    </ul>
-                </div>
+                </div> -->
              <!--End Dropdown-->
             </div>
       </div>

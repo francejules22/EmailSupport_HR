@@ -43,8 +43,7 @@
            <div class="collapse navbar-collapse" id="navbarSupportedContent">
              <form class="ms-auto" role="search" >
                <div class="input-group ">
-                 <button class="btn btn-outline-light" type="button" id="button-addon1"><i class="fa-solid fa-magnifying-glass"></i></button>
-                 <input type="text" class="form-control" placeholder="Search" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                 <input type="hidden" class="form-control" placeholder="Search" aria-label="Example text with button addon" aria-describedby="button-addon1">
                </div>
              </form>
            </div>

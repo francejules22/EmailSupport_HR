@@ -1,7 +1,6 @@
 <?php
   include 'include/header.php';
   include 'dbconnect/connection.php';
-  include 'dbconnect/pdo_connection.php';
 ?>
 
 <div class="container">
@@ -64,6 +63,8 @@
                             title: 'The data has been retrieved',
                             showConfirmButton: false,
                             timer: 1500
+                        }).then(() => {
+                           window.location.reload();
                         })
                     }
                   })

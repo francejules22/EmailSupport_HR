@@ -8,9 +8,10 @@
         <button type="button" class="ae btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
            <i class="icon fa-solid fa-user-plus"></i>Add Customer
         </button>
-        <button class="ae btn btn-outline-dark"> <i class="icon fa-solid fa-clock-rotate-left"></i>History</button>
-        
-        <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#archive">
+
+        <button class="ae btn btn-outline-dark"> <i class="icon fa-solid fa-envelope-circle-check"></i>Email Sent</button>
+
+        <button type="button" class="ae btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#archive">
            <i class="icon fa-solid fa-box-archive"></i>Archive All Accounts
         </button>
 </div>

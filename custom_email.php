@@ -1,5 +1,7 @@
 <?php
    include "include/header.php";
+   include "dbconnect/connection.php";
+   require 'vendor/autoload.php';
    //Connection using PDO
    //PDO (PHP Data Objects) - provides data access abstraction layer, which means that, regardless of which database you're using you use the same functions to issue queries and fetch data.
    $connect = new PDO("mysql:host=localhost; dbname=email_db", "root", "");
@@ -10,6 +12,14 @@
    $statement->execute();
    //fetchAll() -Returns an array containing all of the result set rows
    $result = $statement->fetchALL();
+
+
+   //Get count of data set first
+   $sql = "SELECT * FROM customer";
+   $count = $link->query($sql)->num_rows;
+   $users = $link->query($sql);
+
+ 
 ?>
 
 
@@ -19,70 +29,19 @@
             <div class="col">
                    <div class="form container ">
                        <div class="">
-                       <!--START OF TABLE  --> 
-                          <!-- <table class="table table-bordered table-striped" id="employee_data">
-                              <tr>
-                                  <th>Customer Name</th>
-                                  <th>Email</th>
-                                  <th>Select</th>
-                                  <th>Action</th>
-                              </tr>
-                               <?php 
-                                //    $count = 0;
-                                //    foreach($result as $row){
-                                //        $count = $count + 1;
-                                //        echo '
-                                //           <tr>
-                                //              <td>'.$row["customer_name"].'</td>
-                                //              <td>'.$row["customer_email"].'</td>
-                                //              <td>
-                                //                 <input type="checkbox" 
-                                //                        class="single_select" 
-                                //                        name="single_select"
-                                //                        data-email="'.$row["customer_email"].'"
-                                //                        data-name="'.$row["customer_name"].'"/>
-                                //              </td>
-                                //              <td>
-                                //                 <button type="button" 
-                                //                         name="email_button" 
-                                //                         class="btn btn-info btn-xs email_button"
-                                //                         id="'.$count.'"
-                                //                         data-email="'.$row["customer_email"].'"
-                                //                         data-name="'.$row["customer_name"].'"
-                                //                         data-action="single">Send Single
-                                //                 </button> 
-                                //              </td>
-                                //           </tr>
-                                //        ';
-                                //    }
-                               ?>
-                                  <tr>
-                                     <td colspan="3"></td>
-                                     <td><button type="button" 
-                                                 name="bulk_email" 
-                                                 class="btn btn-info email_button" 
-                                                 id="bulk_email" 
-                                                 data-action="bulk">Send Bulk
-                                         </button>
-                                     </td>
-                                  </tr>
-                            </table> -->
-                    <!-- END OF TABLE -->
-
-
-                   <!--START OF TABLE-->
-                      <table class="table table-bordered table-striped table-hovered table-light" id="employee_data">
+                      <!--START OF TABLE-->
+                      <table class="table table-bordered table-striped table-hovered table-light" id="customer_data">
                             <thead>
                                 <tr>
                                     <th>Customer Name</th>
                                     <th>Email</th>
-                                    <th>Email Status</th>
-                                    <th>Select email</th>
-                        
+                                    <th>
+                                        <input type="checkbox" id="mcheck">Select All
+                                    </th>
                                 </tr>
                             </thead>
 
-                             <tbody>
+                             <tbody id="allUsers">
                                  <?php
                                       $conn = new mysqli('localhost','root','','email_db');
                                       $sql = "SELECT * FROM customer";
@@ -93,26 +52,14 @@
                                  <tr> 
                                      <td><?= $row['customer_name'] ?></td>
                                      <td class="get"><?= $row['customer_email'] ?></td>              
-                                     <td>
-                                        <div class="d-flex justify-content-center">
-                                            <button type="button" 
-                                                    name="email_button" 
-                                                    class="btn btn-info btn-xs email_button"
-                                                    id="<?php $count?>"
-                                                    data-email="<?= $row["customer_email"]?>"
-                                                    data-name="<?= $row["customer_name"] ?>"
-                                                   data-action="single" disabled>Status
-                                           </button> 
-                                     </td>
-                                        </div> 
-
                                      <td>  
                                           <input type="checkbox" 
-                                                 class="single_select" 
                                                  name="single_select"
                                                  id="single_select"
                                                  data-email="<?=$row["customer_email"]?>"
                                                  data-name="<?=$row["customer_name"]?>"
+                                                 value="<?=$row["customer_email"] ?>"
+                                                 onclick="updateTextArea();"
                                          />             
                                     </td>
                                 </tr>
@@ -123,12 +70,12 @@
                          </table>
                     <!-- END OF TABLE-->
                     <div class="d-flex justify-content-end mt-3">
-                        <button class="btn btn-success"> Add all Emails</button>
+                        <button class="btn btn-success">Add all Emails</button>
                      </div>
                 </div>
             </div>
         </div>
-
+    
             <div class="col">
                     <div class="">
                          <!--Adding Successful Message -->
@@ -138,8 +85,10 @@
                               <?php } ?>
                            <!--Start Form Action with POST Method-->
                            <!--Using POST Method (the sender name will not showed in url and it is hidden)-->
-                            <form action="send.php" method="post" enctype="multipart/form-data">
-                                <div class="row">
+                            <form action="send.php" class="msg_container" method="post" enctype="multipart/form-data">
+                              <h4>Compose Email</h4>
+                              <p id="multi-response"></p>
+                                <div class="row">  
                                 <!--First Input for Sender Name-->
                                      <div class="col-6 mb-3">
                                         <label for="sender_name" class="form-label">Sender Name</label>
@@ -148,7 +97,7 @@
                                 <!--Second Input for Sender Email-->
                                     <div class="col-6 mb-3">
                                        <label for="sender_email" class="form-label">Sender Email</label>
-                                       <input type="email" class="form-control" id="sender" name="sender" placeholder="Sender Email" required>
+                                       <input type="email" class="form-control" id="sender_email" name="sender_email" placeholder="Sender Email" required>
                                     </div>
                                 <!--Third Input for Message-->
                                     <div class="col-6 mb-3">
@@ -164,18 +113,18 @@
                                 <!--Fifth Input for Recipient Emails-->
                                    <div class="mb-3">
                                        <label for="recipient" class="form-label">Recipient Emails</label>
-                                       <textarea class="form-control" id="recipient" name="recipient" rows="3" required>
+                                       <textarea class="form-control" id="emails" name="emails" rows="3" required>
                                        </textarea>
                                    </div> 
                                <!--Six Input for Body-->
                                   <div class="mb-3">
-                                      <label for="body" class="form-label">Body</label>
-                                         <textarea class="form-control" id="body" name="body" placeholder="Enter a message" rows="5" required>
+                                      <label for="body" class="form-label">Message</label>
+                                         <textarea class="form-control" id="message" name="message" placeholder="Enter a message" rows="5" required>
                                          </textarea>
                                   </div>
                                 <!--Buttons-->
                                   <div class="button-box">
-                                      <button class="btn btn-success me-2" name="send" type="submit">Send Email</button>
+                                      <button class="btn btn-success me-2" name="send" type="submit" onclick="multi_email();" >Send Email</button>
                                       <button class="btn btn-danger" name="reset" type="reset">Reset Form</button>
                                   </div>
                            </form>
@@ -187,13 +136,15 @@
 
 <script src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
+<script src="main.js" type="text/javascript"></script>
 
 <!-- START SINGLE EMAIL-->
 <!--Using JQUERY-->
 <script>
     $(document).ready(function(){
-        // DATA TALBLE ADDED BY CRIS
-        $('#employee_data').DataTable();
+        
+        // DATA TABLE
+        $('#customer_data').DataTable();
 
         $('.email_button').click(function(){
             $(this).attr('disabled', 'disabled');
@@ -252,7 +203,7 @@
             var email = $(this).closest('tr').find('.get').text();
             if(select == true)
             {
-                document.getElementById("recipient").value = email;
+                document.getElementById("emails").value = email;
                 if(select == 10)
                 {
                 
@@ -260,12 +211,12 @@
             }
             else
             {
-                document.getElementById("recipient").value = null;
+                document.getElementById("emails").value = null;
             }
              });
 
              //Adding CKEDITOR
-             CKEDITOR.replace( 'body',{
+             CKEDITOR.replace( 'message',{
                 removeButtons: 'Anchor,Source,Preview,Templates,Cut,Copy,Paste,PasteText,PasteCode,PasteFromWord,Undo,Redo,Scayt,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,HiddenField,Image,Table,HorizontalRule,Smiley,SpecialChar,PageBreak,Iframe,Strike,CopyFormatting,RemoveFormat,BulletedList,NumberedList,Outdent,Indent,CreateDiv,Blockquote,JustifyLeft,JustifyCenter,JustifyRight,JustifyBlock,BidiLtr,BidiRtl,Link,Unlink,Styles,Format,Font,FontSize,spacingsliders,TextColor,BGColor,ShowBlocks,Maximize,About',
             });
     });

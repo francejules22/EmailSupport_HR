@@ -13,11 +13,11 @@ require 'vendor/autoload.php';
 
 if (isset($_POST["send"])){     
         $sender_name = $_POST["sender_name"];              //For Sender Name
-        $sender = $_POST["sender"];                        //For Sender
+        $sender = $_POST["sender_email"];                        //For Sender
         $subject = $_POST["subject"];                      //For Subject
         $attachments = $_FILES["attachments"]["name"];     //Setting up a Files
-        $recipients = explode(",", $_POST["recipient"]);    //For Recipient
-        $body = $_POST["body"];                            //For Body
+        $recipients = explode(",", $_POST["emails"]);   //For Recipient
+        $body = $_POST["message"];                            //For Body
 
         //Create an instance; passing `true` enables exceptions
         $mail = new PHPMailer(true);
@@ -36,8 +36,8 @@ if (isset($_POST["send"])){
             $mail->isSMTP();                                               //Send using SMTP
             $mail->Host       = 'smtp.gmail.com';                          //Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                      //Enable SMTP authentication
-            $mail->Username   = 'francisjulescelesteespartero@gmail.com';  //SMTP username
-            $mail->Password   = 'ervotqstaxokxjgq';                        //SMTP password
+            $mail->Username   = 'esparterofrancisjules@gmail.com';  //SMTP username
+            $mail->Password   = 'obbykfxrcxcebhvy';                        //SMTP password
             $mail->SMTPSecure = 'tls';                                     //Enable implicit TLS encryption
             $mail->Port       = 587;                                       //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
@@ -69,5 +69,6 @@ if (isset($_POST["send"])){
           } catch (Exception $e) {
               echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
           }
+
 }
 

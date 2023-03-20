@@ -31,6 +31,9 @@
      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
      <script type="text/javascript" src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
      <script type="text/javascript" src="https://cdn.datatables.net/1.13.3/js/dataTables.bootstrap5.min.js"></script>
+   <!--Editor -->
+     <link rel="stylesheet" href="trumbowyg/dist/ui/trumbowyg.min.css">
+     <script src="trumbowyg/dist/trumbowyg.min.js"></script>
      
 </head> 
      <body style="background: #E8EEF1;">

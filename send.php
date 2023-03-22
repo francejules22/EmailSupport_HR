@@ -12,10 +12,10 @@ require 'vendor/autoload.php';
 
 
 if (isset($_POST["send"])){     
-        $sender_name = $_POST["sender_name"];              //For Sender Name
-        $sender = $_POST["sender_email"];                        //For Sender
-        $subject = $_POST["subject"];                      //For Subject
-        $attachments = $_FILES["attachments"]["name"];     //Setting up a Files
+        $sender_name = $_POST["sender_name"];             //For Sender Name
+        $sender = $_POST["sender_email"];                 //For Sender
+        $subject = $_POST["subject"];                     //For Subject
+        $attachments = $_FILES["attachments"]["name"];    //Setting up a Files
         $recipients = explode(",", $_POST["emails"]);   //For Recipient
         $body = $_POST["message"];                            //For Body
 
@@ -32,12 +32,12 @@ if (isset($_POST["send"])){
         try {
             //Server settings
             // $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-            $mail->SMTPDebug = 2;
+            $mail->SMTPDebug = 0;
             $mail->isSMTP();                                               //Send using SMTP
             $mail->Host       = 'smtp.gmail.com';                          //Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                      //Enable SMTP authentication
-            $mail->Username   = 'esparterofrancisjules@gmail.com';  //SMTP username
-            $mail->Password   = 'obbykfxrcxcebhvy';                        //SMTP password
+            $mail->Username   = 'francisjulescelesteespartero@gmail.com';  //SMTP username
+            $mail->Password   = 'fromytkvwoibxmli';                        //SMTP password
             $mail->SMTPSecure = 'tls';                                     //Enable implicit TLS encryption
             $mail->Port       = 587;                                       //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
@@ -64,8 +64,12 @@ if (isset($_POST["send"])){
             $mail->Body    = $body;
             // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
-            $mail->send();
-            echo 'Message has been sent';
+           //Message sent statement
+           if(!$mail->send()){
+              echo "Sorry! Message has been not send some technical issues was found";
+           } else {
+              echo "Success! Message has been sent to email address!";
+           }
           } catch (Exception $e) {
               echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
           }

@@ -69,9 +69,6 @@
                               </tbody>                
                          </table>
                     <!-- END OF TABLE-->
-                    <div class="d-flex justify-content-end mt-3">
-                        <button class="btn btn-success">Add all Emails</button>
-                     </div>
                 </div>
             </div>
         </div>
@@ -214,6 +211,14 @@
                 document.getElementById("emails").value = null;
             }
              });
+
+
+             
+        //SELECT ALL OPTION QUERY -Cris
+            $("#mcheck").click(function(){
+                $("input[type=checkbox]").prop('checked', $(this).prop('checked'));
+            })
+
 
              //Adding CKEDITOR
              CKEDITOR.replace( 'message',{

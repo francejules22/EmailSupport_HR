@@ -9,7 +9,7 @@
            <i class="icon fa-solid fa-user-plus"></i>Add Customer
         </button>
 
-        <button class="ae btn btn-outline-dark"> <i class="icon fa-solid fa-envelope-circle-check"></i>Email Sent</button>
+        <button class="ae btn btn-outline-dark"> <i class="icon fa-solid fa-envelope-circle-check"></i><a href="track_email.php" style="text-decoration: none; color: black;" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'">Email Sent</a></button>
 
         <button type="button" class="ae btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#archive">
            <i class="icon fa-solid fa-box-archive"></i>Archive All Accounts

@@ -1,5 +1,12 @@
 <!--SEND MULTIPLE EMAIL-->
 <?php
+
+//Connection
+$conn=mysqli_connect("localhost","root","");
+mysqli_select_db($conn,"email_db");
+$uniq = uniqid();
+
+
 //Import PHPMailer classes into the global namespace
 //These must be at the top of your script, not inside a function
 use PHPMailer\PHPMailer\PHPMailer;
@@ -61,14 +68,16 @@ if (isset($_POST["send"])){
             //Content
             $mail->isHTML(true);                                  //Set email format to HTML
             $mail->Subject = $subject;
-            $mail->Body    = $body;
-            // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+            // $mail->Body    = $body;
+            $mail->Body = "<a href='http://localhost/HREmailSupport/mail_status.php?token=$uniq'>Please click to confirm if you receive the email!</a>";
+            // $mail->AltBody = "<img src='http://localhost/HREmailSupport/email_status.php?token=$uniq'>This is GECO Asia Philippines!";
 
            //Message sent statement
            if(!$mail->send()){
               echo "Sorry! Message has been not send some technical issues was found";
            } else {
               echo "Success! Message has been sent to email address!";
+              mysqli_query($conn,"INSERT INTO email_track (email_status, unique_id) values ('send','$uniq')");
            }
           } catch (Exception $e) {
               echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";

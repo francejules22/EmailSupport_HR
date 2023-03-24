@@ -74,8 +74,8 @@ if (isset($_POST["send"])){
             //Content
             $mail->isHTML(true);                                  //Set email format to HTML
             $mail->Subject = $subject;
-            // $mail->Body    = $body;
-            $mail->Body = "<a href='http://localhost/HREmailSupport/mail_status.php?token=$uniq'>Please click to confirm if you receive the email!</a>";
+            $mail->Body    = $body;
+            // $mail->Body = "<a href='http://localhost/HREmailSupport/mail_status.php?token=$uniq'>Please click to confirm if you receive the email!</a>";
             // $mail->AltBody = "<img src='http://localhost/HREmailSupport/email_status.php?token=$uniq'>This is GECO Asia Philippines!";
    
 

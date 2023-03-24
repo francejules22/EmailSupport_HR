@@ -9,8 +9,8 @@
         <table class="table table-bordered table-striped table-hovered table-light" id="track_data">
                <thead>
                   <tr>
-                     <th>Email Body</th>
-                     <th>Email Address</th>
+                     <th>Subject</th>
+                     <th>Recipient</th>
                      <th>Email Status</th>
                   </tr>
                </thead>
@@ -23,11 +23,10 @@
                       {
                   ?>
                   <tr>
-                     <td><?= $row['message'] ?></td>
+                     <td><?= $row['subject'] ?></td>
                      <td><?= $row['emails'] ?></td>
                      <td><center>
                         <button type="button" class="btn btn-success" id= "<?= $row['status'] ?>" >Sent</button> 
-                        <button type="button" class="btn btn-danger" id= "<?= $row['status'] ?>" >Fail</button> 
                      </center></td>
                   </tr>
                   <?php

@@ -1,4 +1,6 @@
 <?php
+
+//OPEN STATUS
     if(isset($_GET['token'])!=''){
        $token = $_GET['token']; 
        $conn=mysqli_connect("localhost","root","");

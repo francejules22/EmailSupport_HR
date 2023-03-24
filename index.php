@@ -75,7 +75,6 @@
                   <tr>
                      <th>Customer Name</th>
                      <th>Email</th>
-                     <th>Email Status</th>
                      <th>Actions</th>
                   </tr>
                </thead>
@@ -90,7 +89,6 @@
                   <tr>
                      <td><?= $row['customer_name'] ?></td>
                      <td><?= $row['customer_email'] ?></td>
-                     <td><button type="button" name="email_button" class="btn btn-info btn-xs email_button" ><i class="icon fa-solid fa-square-poll-horizontal"></i>Status</button> </td>
                      <td><center>
                         <button type="button" class="btn btn-warning update_user" id= "<?= $row['customer_id'] ?>" ><i class="fa-solid fa-pen-to-square"></i></button>
                         <button type="button" class="btn btn-danger del_user " id= "<?= $row['customer_id'] ?>" ><i class="fa-solid fa-trash"></i></button>
@@ -106,7 +104,7 @@
        </div>
  </main>
 
-  <div id="display_user"></div>
+<div id="display_user"></div>
 
 
 <!--Datatables-->
@@ -175,8 +173,7 @@
         });
        //End AJAX
 
-
-        //Edit Function
+       //Edit Function
         $(document).on('click','.update_user',function(){
            var id = $(this).attr('id');
           
@@ -192,8 +189,6 @@
             }
            })
         });
-
-
 
         //Start Delete Function
         $(document).on('click','.del_user',function(e){

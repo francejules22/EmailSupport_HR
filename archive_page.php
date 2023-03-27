@@ -9,7 +9,7 @@
              <table class="table table-bordered table-striped table-hovered table-light" id="customer_data">
                <thead>
                   <tr>
-                      <th>Customer Name</th>
+                      <th>Name</th>
                       <th>Email</th>
                       <th>Data Archived</th>
                       <th>Action</th>

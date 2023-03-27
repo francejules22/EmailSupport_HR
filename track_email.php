@@ -26,6 +26,7 @@
                      <td><?= $row['subject'] ?></td>
                      <td><?= $row['emails'] ?></td>
                      <td><center>
+                        <!--Add Ternary Operator-->
                         <button type="button" class="btn btn-success" id= "<?= $row['status'] ?>" >Sent</button> 
                      </center></td>
                   </tr>
@@ -48,5 +49,9 @@
        
           //Start Data Tables
           $('#track_data').DataTable();
+
+
+          //Fail or Sent Status
+          
      })
  </script>

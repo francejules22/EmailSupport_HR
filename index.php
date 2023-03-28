@@ -6,7 +6,7 @@
 <div class="wrapper-box container mb-5">
 <!-- Button trigger modal -->
         <button type="button" class="ae btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-           <i class="icon fa-solid fa-user-plus"></i>Add Customer
+           <i class="icon fa-solid fa-user-plus"></i>Add Email
         </button>
 
 <!-- <button class="ae btn btn-outline-dark"> <i class="icon fa-solid fa-envelope-circle-check"></i><a href="track_email.php" style="text-decoration: none; color: black;" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'">Email Sent</a></button> -->
@@ -30,7 +30,7 @@
    <div class="modal-dialog">
      <div class="modal-content">
          <div class="modal-header">
-           <h1 class="modal-title fs-5" id="staticBackdropLabel">Add Customer</h1>
+           <h1 class="modal-title fs-5" id="staticBackdropLabel">Add Email</h1>
            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
          </div>
          <div class="modal-body">
@@ -44,7 +44,7 @@
                  <input type="text" class="form-control" placeholder="" name="email" aria-label="Username" aria-describedby="addon-wrapping">
                </div>
          </div>
-         <div class="modal-footer">
+           <div class="modal-footer">
              <button type="submit" class="btn btn-success" name="add"><i class="icon fa-solid fa-user-plus"></i>Add</button>
           </form>
          </div>
@@ -81,7 +81,7 @@
           <table class="table table-bordered table-striped table-hovered table-light" id="customer_data">
                <thead>
                   <tr>
-                     <th>Customer Name</th>
+                     <th>Name</th>
                      <th>Email</th>
                      <th>Actions</th>
                   </tr>
@@ -109,6 +109,7 @@
                </tbody>
             </table>
             <!--End Table-->
+            
        </div>
  </main>
 
@@ -203,7 +204,7 @@
             var id = $(this).attr('id');
             Swal.fire({
                 title: 'Are you sure?',
-                text: "The customer details will be deleted!",
+                text: "The email details will be deleted!",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
@@ -268,6 +269,7 @@
          });
       //End Archive Function
 
+    
 }); 
 //End
 </script>

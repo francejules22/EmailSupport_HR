@@ -1,8 +1,8 @@
 <?php
      include 'include/header.php';
      include "./dbconnect/connection.php";
+     
 ?>
-
 
 <div class="container">
      <!--Start Table-->
@@ -26,8 +26,12 @@
                      <td><?= $row['subject'] ?></td>
                      <td><?= $row['emails'] ?></td>
                      <td><center>
-                        <!--Add Ternary Operator-->
-                        <button type="button" class="btn btn-success" id= "<?= $row['status'] ?>" >Sent</button> 
+                        <!--Sent or Fail Email Status-->
+                           <?php if ($row['status'] == 'send') { ?>
+                               <button type="button" class="btn btn-success" id= "<?= $row['status'] ?>" >Sent</button>
+                           <?php } else { ?>
+                               <button type="button" class="btn btn-danger" id= "<?= $row['status'] ?>" >Fail</button>
+                           <?php } ?>
                      </center></td>
                   </tr>
                   <?php
@@ -36,6 +40,13 @@
                </tbody>
             </table>
      <!--End Table-->
+
+    <!-- Getting the ID for sweetalert-->
+            <?php if(isset($_GET['m'])) : ?>
+               <div class="flash-data" data-flashdata="<?= $_GET['m']; ?>">
+                  <label>email sent</label>
+               </div>
+            <?php endif; ?>
  </div>
 
 
@@ -46,12 +57,21 @@
 
  <script>
      $(document).ready(function(){
-       
           //Start Data Tables
           $('#track_data').DataTable();
+      })
 
 
-          //Fail or Sent Status
-          
-     })
+// Added Alert Box for Email Success
+     const flasdata = $('.flash-data').data('flashdata')
+         if(flashdata)
+         {
+            Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Email has been successfully sent',
+            showConfirmButton: false,
+            timer: 1500
+            })
+         }
  </script>

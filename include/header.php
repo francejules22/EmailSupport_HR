@@ -1,6 +1,6 @@
 <?php 
    include 'dbconnect/connection.php';
-
+   session_start();
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +20,7 @@
     <!-- fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!--SweetAlert-->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
     <!-- ckeditor -->
     <script src="https://cdn.ckeditor.com/4.20.0/full/ckeditor.js"></script>
    <!--Datatables-->
@@ -86,10 +86,8 @@
                 <div class="d-flex  mb-2">
                    <a href="archive_page.php" class="icon btn btn-primary"><i class="icon fa-solid fa-box-archive"></i>Archives</a>
                    <a href="custom_email.php" class="icon btn btn-primary"><i class="icon fa-solid fa-envelope"></i>Email</a>
-                <!-- email tracking page -->
-                   <a href="track_email.php" class="icon btn btn-primary"><i class="fa-solid fa-chart-column"></i>  Track Email</a>
-                   
-                
+                   <!-- email tracking page -->
+                   <a href="track_email.php" class="icon btn btn-primary"><i class="fa-solid fa-chart-column"></i> Track Email</a>
                    <!-- Button trigger modal -->
                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#guide">
                            <i class="fa-solid fa-circle-question"></i>
@@ -97,39 +95,39 @@
 
                            <!-- Modal -->
                            <div class="modal fade" id="guide" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                           <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                           <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
                               <div class="modal-content">
                                  <div class="modal-header">
                                  <h1 class="modal-title fs-5" id="staticBackdropLabel">Guidelines to HR Email Support System</h1>
                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                  </div>
-                                 <div class="modal-body">
-                                 Geco Asia Logo-  Logo is used to link to the system's home page. <br> <br>
+                                 <div class="modal-body">                                 
+                                      <b>Geco Asia Logo </b> -  <i>logo is used to link to the system's home page.</i> <br> <br>
 
-                                 Archive -  is linked to the archive page where aacounts of employees are stored if not in use. <br> <br>
+                                      <b>Archive</b> -  <i>is linked to the archive page where accounts of emails are stored if not in use.</i> <br> <br>
 
-                                 Email button - is a link to the archive page where employee accounts are kept when not in use. <br> <br>
+                                      <b>Email Button</b> - <i>is a link to the archive page where employees accounts are kept when not in use.</i> <br> <br>
+
+                                      <b>Track Email Button</b> - <i>is linked to the track email page where the HR can check the status of emails that are sent to the recipient emails.</i> <br> <br>
+
+                                      <b>Question Mark</b> - <i>is a button to see the guidelines on what are the features of each functionality of the system.</i> <br> <br>
+
+                                      <b>Add Email Button</b> - <i>is used to register email accounts to the system.</i>  <br> <br>
+
+                                      <b>Archive All Accounts Button</b> - <i>is used to archive all of the accounts of emails that is registered and will be saved to archive database.</i> <br> <br>
+
+                                      <b>Export Button</b> -  <i>button used to export account details of emails that are currently registered to the system to excel file.</i> <br> <br>
+
+                                      <b>Show Entries Dropdown</b> -  <i>the dropdown will control the amount of accounts that is being shown to the tables.</i> <br> <br>
+
+                                      <b>Search Bar</b> - <i>is used to search a specific account of emails.</i> <br> <br>
+
+                                      <b>Edit Button</b> - <i>is used to edit the credentials of the emails account that is registered to the system.</i> <br> <br>
+
+                                      <b>Delete Button</b> - <i>is used to delete the specific account of an emails that is terminated or can't be accessed by the companies.</i> <br> <br>
+
+                                      <b>Single Archive Button</b> - <i>the button will archive the specific account that is not being used by the emails and will be saved to the archive database.</i> <br> <br>
                                  
-                                 Track Email button - is linked to the track email page where the HR can check the status of emails that are sent to the employees. <br> <br>
-                                 
-                                 Question mark - is a button to see the guidelines on what are the functions of each button of the system. <br> <br>
-
-                                 Add Employee Button - -is used to register employee accounts to the system.  <br> <br>
-
-                                 Archive All Accounts Buttons - is used to archive all of the accounts of employess that is registered and will be saved to archive database. <br> <br>
-
-                                 Export Button -  button used to export account details of employees that are currently registered to the system to excel file. <br> <br>
-
-                                 Show Entries Dropdown -  the dorpdown will controll the amount of accounts that is being shown to the tables. <br> <br>
-
-                                 Search Bar - is used to search a specific account of employees. <br> <br>
-
-                                 Edit button - is used to edit the credentials of the employee account that is registered to the system. <br> <br>
-                                 
-                                 Delete Button - is used to delete the specific account of an employee that is terminated or cant be accessed by the companies. <br> <br>
-
-                                 Single Archive Button - the button will archive the specific account that is not being used by the employees  and will be saved to the archive database. <br> <br>
-                                  
                                  </div>
                                  <div class="modal-footer">
                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -150,3 +148,5 @@
 
 
 <main class="mt-5 pt-3">
+
+

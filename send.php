@@ -1,6 +1,8 @@
 <!--SEND MULTIPLE EMAIL-->
 <?php
 
+
+
 //Connection
 $conn=mysqli_connect("localhost","root","");
 mysqli_select_db($conn,"email_db");
@@ -78,20 +80,25 @@ if (isset($_POST["send"])){
             // $mail->Body = "<a href='http://localhost/HREmailSupport/mail_status.php?token=$uniq'>Please click to confirm if you receive the email!</a>";
             // $mail->AltBody = "<img src='http://localhost/HREmailSupport/email_status.php?token=$uniq'>This is GECO Asia Philippines!";
    
-
            //Message sent statement
            if(!$mail->send()){
               echo "Sorry! Message has been not send some technical issues was found";
               //FAIL STATUS
               mysqli_query($conn,"INSERT INTO email_track (sender_name, sender_email, subject, message, emails, status, unique_id) values ('$sender_name', '$sender_email', '$subject', '$email_body', '$email_address','fail','$uniq')");
            } else {
-              echo "Success! Message has been sent to email address!";
+            //  echo "Success! Message has been sent to email address!";
               //SEND STATUS
               mysqli_query($conn,"INSERT INTO email_track (sender_name, sender_email, subject, message, emails, status, unique_id) values ('$sender_name', '$sender_email', '$subject', '$email_body', '$email_address','send','$uniq')");
-           }
+            ?>
+                        <script> alert('Email Sent');window.location='track_email.php';</script>
+
+            <?php
+              
+            }
           } catch (Exception $e) {
               echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
           }
 
+          
 }
-
+?>

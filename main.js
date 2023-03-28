@@ -16,7 +16,6 @@ function updateTextArea(){
     $('#emails').val(allVals);
 }
 
-
 //Added function using select all
 $(function(){
     $('#mcheck').click(updateTextArea);

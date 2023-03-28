@@ -214,7 +214,7 @@
 
 
              
-        //SELECT ALL OPTION QUERY -Cris
+        //SELECT ALL OPTION QUERY
             $("#mcheck").click(function(){
                 $("input[type=checkbox]").prop('checked', $(this).prop('checked'));
             })

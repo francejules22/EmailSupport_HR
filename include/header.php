@@ -83,11 +83,65 @@
 
              <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!--Start Dropdown-->
-                <div class="d-flex flex-row mb-2">
-                   <a href="archive_page.php" class="icon btn btn-primary"><i class="icon fa-solid fa-box-archive"></i>Archive Page</a>
-                   <a href="custom_email.php" class="icon btn btn-primary"><i class="icon fa-solid fa-envelope"></i>Email Page</a>
+                <div class="d-flex  mb-2">
+                   <a href="archive_page.php" class="icon btn btn-primary"><i class="icon fa-solid fa-box-archive"></i>Archives</a>
+                   <a href="custom_email.php" class="icon btn btn-primary"><i class="icon fa-solid fa-envelope"></i>Email</a>
+                <!-- email tracking page -->
+                   <a href="track_email.php" class="icon btn btn-primary"><i class="fa-solid fa-chart-column"></i>  Track Email</a>
+                   
+                
+                   <!-- Button trigger modal -->
+                           <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#guide">
+                           <i class="fa-solid fa-circle-question"></i>
+                           </button>
+
+                           <!-- Modal -->
+                           <div class="modal fade" id="guide" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                           <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                              <div class="modal-content">
+                                 <div class="modal-header">
+                                 <h1 class="modal-title fs-5" id="staticBackdropLabel">Guidelines to HR Email Support System</h1>
+                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                 </div>
+                                 <div class="modal-body">
+                                 Geco Asia Logo-  Logo is used to link to the system's home page. <br> <br>
+
+                                 Archive -  is linked to the archive page where aacounts of employees are stored if not in use. <br> <br>
+
+                                 Email button - is a link to the archive page where employee accounts are kept when not in use. <br> <br>
+                                 
+                                 Track Email button - is linked to the track email page where the HR can check the status of emails that are sent to the employees. <br> <br>
+                                 
+                                 Question mark - is a button to see the guidelines on what are the functions of each button of the system. <br> <br>
+
+                                 Add Employee Button - -is used to register employee accounts to the system.  <br> <br>
+
+                                 Archive All Accounts Buttons - is used to archive all of the accounts of employess that is registered and will be saved to archive database. <br> <br>
+
+                                 Export Button -  button used to export account details of employees that are currently registered to the system to excel file. <br> <br>
+
+                                 Show Entries Dropdown -  the dorpdown will controll the amount of accounts that is being shown to the tables. <br> <br>
+
+                                 Search Bar - is used to search a specific account of employees. <br> <br>
+
+                                 Edit button - is used to edit the credentials of the employee account that is registered to the system. <br> <br>
+                                 
+                                 Delete Button - is used to delete the specific account of an employee that is terminated or cant be accessed by the companies. <br> <br>
+
+                                 Single Archive Button - the button will archive the specific account that is not being used by the employees  and will be saved to the archive database. <br> <br>
+                                  
+                                 </div>
+                                 <div class="modal-footer">
+                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                 
+                                 </div>
+                              </div>
+                           </div>
+                           </div>
+                   
+                   <!-- end of navbar -->
                 </div>
-                <!--End Dropdown-->
+                
             </div>
       </div>
   </nav>   

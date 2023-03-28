@@ -36,7 +36,7 @@
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>
-                                        <input type="checkbox" id="mcheck">Select All
+                                        <input type="checkbox" id="mcheck"> Select All
                                     </th>
                                 </tr>
                             </thead>

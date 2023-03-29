@@ -62,6 +62,7 @@ Now, to run a PHP script:
 
  <b>Single Archive Button</b> - <i>the button will archive the specific account that is not being used by the emails and will be saved to the archive database.</i>   <br> <br>
                                  
-
+# How the System Works?
+1. 
 
 

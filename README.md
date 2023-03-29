@@ -76,3 +76,10 @@ Now, to run a PHP script:
 4. The information will be stored in a database.
 ![email5](https://user-images.githubusercontent.com/80078725/228468174-1d949df6-e434-4dce-92fa-c0c124882b46.png)
 
+5. You can also update the user's name and email address, and the database will update the data automatically.
+![update1](https://user-images.githubusercontent.com/80078725/228469646-263e0db5-3545-4ea3-a1f0-791e58d6f2f2.png)
+![update2](https://user-images.githubusercontent.com/80078725/228469717-7d87f925-de66-4f07-aaca-d17b4fd6972b.png)
+![update3](https://user-images.githubusercontent.com/80078725/228469824-5219bcde-0f2c-4b55-8b5b-5f8d91e51332.png)
+![update4](https://user-images.githubusercontent.com/80078725/228469904-08cc9c9b-ba70-442f-bc12-3238f40fe149.png)
+
+

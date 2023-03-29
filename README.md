@@ -63,6 +63,16 @@ Now, to run a PHP script:
  <b>Single Archive Button</b> - <i>the button will archive the specific account that is not being used by the emails and will be saved to the archive database.</i>   <br> <br>
                                  
 # How the System Works?
-1. 
+1. Adding name and email to the system.
+![email1](https://user-images.githubusercontent.com/80078725/228465691-00631542-61d8-47dc-867f-17abe578398e.png)
 
+2. Once it done, the system will display the user's name and email address.
+![email2](https://user-images.githubusercontent.com/80078725/228466582-22bde5da-3f45-4ab6-bc56-b4ad9c400716.png)
+
+3. Be sure that just one name and email will be used before adding them; if more are added, the system will provide a warning.
+![email3](https://user-images.githubusercontent.com/80078725/228467481-568f89f1-7c6a-49b4-88b8-396857b3176d.png)
+![email4](https://user-images.githubusercontent.com/80078725/228467600-283b063a-eeba-4a9b-a769-c3854ef6750c.png)
+
+4. The information will be stored in a database.
+[email5](https://user-images.githubusercontent.com/80078725/228468174-1d949df6-e434-4dce-92fa-c0c124882b46.png)
 

@@ -91,3 +91,11 @@ Now, to run a PHP script:
 ![archive2](https://user-images.githubusercontent.com/80078725/228473919-89350000-d56c-436e-9f3c-0dcdfb9b1df8.png)
 ![archive3](https://user-images.githubusercontent.com/80078725/228473999-97b5b382-7c5a-4606-b186-bd78687b1a58.png)
 
+
+8.Also, you can archive all account, which will store it immediately to the archives page and allow you to retrieve it.
+![archiveall1](https://user-images.githubusercontent.com/80078725/228485479-9ccea2ee-66de-4f0c-8599-23db4f7fcc2f.png)
+![archiveall2](https://user-images.githubusercontent.com/80078725/228485703-9f6136cb-8828-46f0-8a9f-392438d95ac9.png)
+
+9.Data from the system will also be exported as a csv file.
+![export1](https://user-images.githubusercontent.com/80078725/228485884-e0b37934-2536-4e7c-9e15-1e88ed12ee1e.png)
+![export2](https://user-images.githubusercontent.com/80078725/228486187-25d87f54-62b9-4427-9208-f8e74cc10846.png)

@@ -82,4 +82,6 @@ Now, to run a PHP script:
 ![update3](https://user-images.githubusercontent.com/80078725/228469824-5219bcde-0f2c-4b55-8b5b-5f8d91e51332.png)
 ![update4](https://user-images.githubusercontent.com/80078725/228469904-08cc9c9b-ba70-442f-bc12-3238f40fe149.png)
 
-
+6. You can also delete the user's name and email address, and automatically delete the record in the database.
+![delete1](https://user-images.githubusercontent.com/80078725/228471638-8f4caa4e-8896-4932-a2eb-be57e28f52ad.png)
+![delete2](https://user-images.githubusercontent.com/80078725/228471919-3bcc202a-9736-4a8b-b7c6-d75b9cb09b66.png)

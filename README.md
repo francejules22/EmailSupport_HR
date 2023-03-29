@@ -1,4 +1,4 @@
-# EmailSupport_HR
+# Human Resource Email Support System
 Human Resource Email Support is my Internship Project at GECO Philippine Incorporation. This project intended to help HR to send multiple files in multiple and single email. Also it uses CRUD functionality to add, update, edit and delete data. 
 It has features to archive all data and view history of the email status either send or fail. 
 
@@ -9,10 +9,13 @@ It has features to archive all data and view history of the email status either 
 * HTML5
 * CSS3 
 * PHP
+* Javascript
+* MySQL
 * JQuery
 * AJAX
 * Bootstrap
 * Sweet Alert
+* Xampp
 * Composer tools
 * PHPMailer API's
 
@@ -57,7 +60,7 @@ Now, to run a PHP script:
 
  <b>Delete Button</b> - <i>is used to delete the specific account of an emails that is terminated or can't be accessed by the companies.</i> <br> <br>
 
- <b>Single Archive Button</b> - <i>the button will archive the specific account that is not being used by the emails and will be saved to the archive database.</i> <br> <br>
+ <b>Single Archive Button</b> - <i>the button will archive the specific account that is not being used by the emails and will be saved to the archive database.</i>   <br> <br>
                                  
 
 

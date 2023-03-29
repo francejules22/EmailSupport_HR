@@ -87,6 +87,7 @@ Now, to run a PHP script:
 ![delete2](https://user-images.githubusercontent.com/80078725/228471919-3bcc202a-9736-4a8b-b7c6-d75b9cb09b66.png)
 
 7. The user's name and email address can also be archived, after which the archived information will be preserved on the archives page and the account can be retrieved.
-![archive1](https://user-images.githubusercontent.com/80078725/228473234-2608bee7-6690-4900-aab2-c3c6432b40a9.png)
+![archive1](https://user-images.githubusercontent.com/80078725/228473811-8a3512e3-b447-4cd3-b49e-6c07554b7606.png)
+![archive2](https://user-images.githubusercontent.com/80078725/228473919-89350000-d56c-436e-9f3c-0dcdfb9b1df8.png)
+![archive3](https://user-images.githubusercontent.com/80078725/228473999-97b5b382-7c5a-4606-b186-bd78687b1a58.png)
 
-![archive3](https://user-images.githubusercontent.com/80078725/228473409-9a10e809-e0b2-45a9-bdb7-af369b129b6b.png)

@@ -88,5 +88,5 @@ Now, to run a PHP script:
 
 7. The user's name and email address can also be archived, after which the archived information will be preserved on the archives page and the account can be retrieved.
 ![archive1](https://user-images.githubusercontent.com/80078725/228473234-2608bee7-6690-4900-aab2-c3c6432b40a9.png)
-![archive2](https://user-images.githubusercontent.com/80078725/228473335-2620bbef-cdf1-4ca2-a751-77e1101c671e.png)
+
 ![archive3](https://user-images.githubusercontent.com/80078725/228473409-9a10e809-e0b2-45a9-bdb7-af369b129b6b.png)

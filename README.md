@@ -74,5 +74,5 @@ Now, to run a PHP script:
 ![email4](https://user-images.githubusercontent.com/80078725/228467600-283b063a-eeba-4a9b-a769-c3854ef6750c.png)
 
 4. The information will be stored in a database.
-[email5](https://user-images.githubusercontent.com/80078725/228468174-1d949df6-e434-4dce-92fa-c0c124882b46.png)
+![email5](https://user-images.githubusercontent.com/80078725/228468174-1d949df6-e434-4dce-92fa-c0c124882b46.png)
 

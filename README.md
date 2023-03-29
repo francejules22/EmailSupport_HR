@@ -92,11 +92,12 @@ Now, to run a PHP script:
 ![delete1](https://user-images.githubusercontent.com/80078725/228471638-8f4caa4e-8896-4932-a2eb-be57e28f52ad.png)
 ![delete2](https://user-images.githubusercontent.com/80078725/228471919-3bcc202a-9736-4a8b-b7c6-d75b9cb09b66.png)
 
-7. The user's name and email address can also be archived, after which the archived information will be preserved on the archives page and the account can be retrieved.
+7. The user's name and email address can also be archived, after which the archived information will be preserved on the archives page, the data will be stored in the database, and the account can be retrieved.
 
 ![archive1](https://user-images.githubusercontent.com/80078725/228473811-8a3512e3-b447-4cd3-b49e-6c07554b7606.png)
 ![archive2](https://user-images.githubusercontent.com/80078725/228473919-89350000-d56c-436e-9f3c-0dcdfb9b1df8.png)
 ![archive3](https://user-images.githubusercontent.com/80078725/228473999-97b5b382-7c5a-4606-b186-bd78687b1a58.png)
+![archivedata](https://user-images.githubusercontent.com/80078725/228494985-c611864f-d238-46e4-a14c-c8716186ea13.png)
 
 
 8.Also, you can archive all account, which will store it immediately to the archives page and allow you to retrieve it.

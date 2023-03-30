@@ -90,12 +90,12 @@ Now, to run a PHP script:
 ![archivedata](https://user-images.githubusercontent.com/80078725/228494985-c611864f-d238-46e4-a14c-c8716186ea13.png)
 
 
-8.Also, you can archive all account, which will store it immediately to the archives page and allow you to retrieve it.
+8. Also, you can archive all account, which will store it immediately to the archives page and allow you to retrieve it.
 
 ![archiveall1](https://user-images.githubusercontent.com/80078725/228485479-9ccea2ee-66de-4f0c-8599-23db4f7fcc2f.png)
 ![archiveall2](https://user-images.githubusercontent.com/80078725/228485703-9f6136cb-8828-46f0-8a9f-392438d95ac9.png)
 
-9.Data from the system will also be exported as a csv file.
+9. Data from the system will also be exported as a csv file.
 
 ![export1](https://user-images.githubusercontent.com/80078725/228485884-e0b37934-2536-4e7c-9e15-1e88ed12ee1e.png)
 ![export2](https://user-images.githubusercontent.com/80078725/228486187-25d87f54-62b9-4427-9208-f8e74cc10846.png)
@@ -105,5 +105,5 @@ Now, to run a PHP script:
 ![archivepage1](https://user-images.githubusercontent.com/80078725/228705971-abe2cd72-2c3d-4fde-b2a4-e4454678ef42.png)
 ![archivepage2](https://user-images.githubusercontent.com/80078725/228706029-907e3d59-579d-44a1-9240-ddc3fbf1fe80.png)
 ![archivepage3](https://user-images.githubusercontent.com/80078725/228706521-8ce7e9d1-61a0-409a-9490-db451b09e42a.png)
-
+ 
 11. 

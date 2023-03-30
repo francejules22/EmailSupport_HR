@@ -132,4 +132,7 @@ Now, to run a PHP script:
 ![feature3](https://user-images.githubusercontent.com/80078725/228717418-c9c01ad4-8b3e-4700-a2f7-12cd233166d1.png)
 ![feature4](https://user-images.githubusercontent.com/80078725/228717450-977e534a-d77d-4efb-90dc-a5ed8021447a.png)
 
-16. 
+16. Other features include the ability to search by user name and email address in the search option.
+
+![search1](https://user-images.githubusercontent.com/80078725/228717790-a2e66ccb-f403-4700-b2db-f0809d1d2add.png)
+![search2](https://user-images.githubusercontent.com/80078725/228717827-77567afd-2189-44ad-88e0-1716a1b16dde.png)

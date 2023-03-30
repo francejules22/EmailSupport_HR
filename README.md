@@ -1,5 +1,5 @@
 # Human Resource Email Support System
-Human Resource Email Support is my Internship Project at GECO Philippine Incorporation. This project intended to help HR to send multiple files in multiple and single email. Also it uses CRUD functionality to add, update, edit and delete data. 
+Human Resource Email Support System is my Internship Project at GECO Philippine Incorporation. This project intended to help HR to send multiple files in multiple and single email. Also it uses CRUD functionality to add, update, edit and delete data. 
 It has features to archive all data and view history of the email status either send or fail.
 
 # Technologies Used

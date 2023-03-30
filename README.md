@@ -122,6 +122,6 @@ Now, to run a PHP script:
 
 ![trackemail1](https://user-images.githubusercontent.com/80078725/228714620-24affe0e-3d98-411f-ba11-a1b2e5820c8e.png)
 
-14. You can view the Human Resource System guidelines under the about button.
+14. You can view the Human Resource Email Support System guidelines in the about button.
 ![guidelines](https://user-images.githubusercontent.com/80078725/228715029-85855bca-9abc-481a-bb98-aa2f81fc0701.png)
 

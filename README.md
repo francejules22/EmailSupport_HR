@@ -118,6 +118,10 @@ Now, to run a PHP script:
 ![emailpage5](https://user-images.githubusercontent.com/80078725/228714239-be529ebd-68b4-477b-b9be-686353266375.png)
 ![emailpage6](https://user-images.githubusercontent.com/80078725/228714277-6f004fe9-57bf-43d6-b6e6-1a5217d96756.png)
 
-13. 
+13. The track email status page will show if the email was successfully sent or failed when the recipient receives it.
 
+![trackemail1](https://user-images.githubusercontent.com/80078725/228714620-24affe0e-3d98-411f-ba11-a1b2e5820c8e.png)
+
+14. You can view the Human Resource System guidelines under the about button.
+![guidelines](https://user-images.githubusercontent.com/80078725/228715029-85855bca-9abc-481a-bb98-aa2f81fc0701.png)
 

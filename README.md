@@ -1,6 +1,10 @@
 # Human Resource Email Support System
 Human Resource Email Support is my Internship Project at GECO Philippine Incorporation. This project intended to help HR to send multiple files in multiple and single email. Also it uses CRUD functionality to add, update, edit and delete data. 
-It has features to archive all data and view history of the email status either send or fail. 
+It has features to archive all data and view history of the email status either send or fail.
+
+# Technologies Used
+* HTML5, CSS3, PHP, Javascript, MySQL, JQuery, AJAX
+* Bootstrap, Sweet Alert, Xampp, Composer tools, PHPMailer API's
 
 # Main Page
 ![hr1](https://user-images.githubusercontent.com/80078725/228458961-8d1b1f94-5da4-4fac-8f45-78ea90171a91.png)

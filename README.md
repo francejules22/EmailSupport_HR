@@ -106,4 +106,13 @@ Now, to run a PHP script:
 ![archivepage2](https://user-images.githubusercontent.com/80078725/228706029-907e3d59-579d-44a1-9240-ddc3fbf1fe80.png)
 ![archivepage3](https://user-images.githubusercontent.com/80078725/228706521-8ce7e9d1-61a0-409a-9490-db451b09e42a.png)
  
-11. 
+11. This is the email page where you can compose and send emails to both single and multiple recipients. You had to enter the sender's name, email address, subject, file attachments, recipient emails, and message on the right-side panel. You can see the name, email address, and a select option to choose the receiver of your email in the left side panel. Following that, you can click the send email button and reset the information by clicking the reset form button.
+
+![emailpage1](https://user-images.githubusercontent.com/80078725/228713765-8bf7b254-cdd5-4243-b45d-f499874a27d0.png)
+![emailpage2](https://user-images.githubusercontent.com/80078725/228713817-55b08316-deb0-4bdc-ac8d-d9d56d2db539.png)
+![emailpage3](https://user-images.githubusercontent.com/80078725/228713857-0059c84e-c406-43c7-9b42-92c97821a67f.png)
+![emailpage4](https://user-images.githubusercontent.com/80078725/228713909-6ad6ba1b-fbc7-4177-a835-e0adb772a44b.png)
+
+
+
+

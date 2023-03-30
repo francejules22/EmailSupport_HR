@@ -123,6 +123,7 @@ Now, to run a PHP script:
 ![trackemail1](https://user-images.githubusercontent.com/80078725/228714620-24affe0e-3d98-411f-ba11-a1b2e5820c8e.png)
 
 14. You can view the Human Resource Email Support System guidelines in the about button.
+
 ![guidelines](https://user-images.githubusercontent.com/80078725/228715029-85855bca-9abc-481a-bb98-aa2f81fc0701.png)
 
 15. For other features, such as pagination, you can select the minimum and maximum number of records to display for each entry. If you'd want to view in a different panel, you can tap the number below as well.

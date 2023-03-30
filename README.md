@@ -125,3 +125,11 @@ Now, to run a PHP script:
 14. You can view the Human Resource Email Support System guidelines in the about button.
 ![guidelines](https://user-images.githubusercontent.com/80078725/228715029-85855bca-9abc-481a-bb98-aa2f81fc0701.png)
 
+15. For other features, such as pagination, you can select the minimum and maximum number of records to display for each entry. If you'd want to view in a different panel, you can tap the number below as well.
+
+![feature1](https://user-images.githubusercontent.com/80078725/228717333-73f69326-9751-4209-9f3a-b72198a0ed03.png)
+![feature2](https://user-images.githubusercontent.com/80078725/228717372-89ba822d-a82f-4e37-bbf6-0bed19d63ca8.png)
+![feature3](https://user-images.githubusercontent.com/80078725/228717418-c9c01ad4-8b3e-4700-a2f7-12cd233166d1.png)
+![feature4](https://user-images.githubusercontent.com/80078725/228717450-977e534a-d77d-4efb-90dc-a5ed8021447a.png)
+
+16. 

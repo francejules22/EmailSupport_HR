@@ -9,20 +9,6 @@ It has features to archive all data and view history of the email status either 
 # Main Page
 ![hr1](https://user-images.githubusercontent.com/80078725/228458961-8d1b1f94-5da4-4fac-8f45-78ea90171a91.png)
 
-# Technologies Used
-* HTML5
-* CSS3 
-* PHP
-* Javascript
-* MySQL
-* JQuery
-* AJAX
-* Bootstrap
-* Sweet Alert
-* Xampp
-* Composer tools
-* PHPMailer API's
-
 
 # Getting Started 
 This is an example of how you may give instructions on setting up your project locally. To get a local copy up and running follow these simple example steps.

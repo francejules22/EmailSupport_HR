@@ -113,6 +113,11 @@ Now, to run a PHP script:
 ![emailpage3](https://user-images.githubusercontent.com/80078725/228713857-0059c84e-c406-43c7-9b42-92c97821a67f.png)
 ![emailpage4](https://user-images.githubusercontent.com/80078725/228713909-6ad6ba1b-fbc7-4177-a835-e0adb772a44b.png)
 
+12. The email will reach its recipient once it has been sent.
 
+![emailpage5](https://user-images.githubusercontent.com/80078725/228714239-be529ebd-68b4-477b-b9be-686353266375.png)
+![emailpage6](https://user-images.githubusercontent.com/80078725/228714277-6f004fe9-57bf-43d6-b6e6-1a5217d96756.png)
+
+13. 
 
 

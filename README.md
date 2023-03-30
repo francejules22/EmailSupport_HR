@@ -110,6 +110,8 @@ Now, to run a PHP script:
 ![export1](https://user-images.githubusercontent.com/80078725/228485884-e0b37934-2536-4e7c-9e15-1e88ed12ee1e.png)
 ![export2](https://user-images.githubusercontent.com/80078725/228486187-25d87f54-62b9-4427-9208-f8e74cc10846.png)
 
-10. 
+10. You can see every record and retrieve it if you need to access the data again, as well as the date the data was stored, on the archive page, where the archive name and email address will also be saved.
 
 ![archivepage1](https://user-images.githubusercontent.com/80078725/228705971-abe2cd72-2c3d-4fde-b2a4-e4454678ef42.png)
+![archivepage2](https://user-images.githubusercontent.com/80078725/228706029-907e3d59-579d-44a1-9240-ddc3fbf1fe80.png)
+![archivepage3](https://user-images.githubusercontent.com/80078725/228706521-8ce7e9d1-61a0-409a-9490-db451b09e42a.png)
